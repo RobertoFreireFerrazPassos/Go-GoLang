@@ -18,16 +18,16 @@ func main() {
 	bookStore.AddBook(book2)
 	bookStore.AddBook(book3)
 	bookStore.AddBook(book4)
-	fmt.Println(bookStore.AmountOfBooks())
+	fmt.Println("Total of books: ", bookStore.AmountOfBooks())
 
 	result := bookStore.Filter(books.CategorySpecification{Category: books.Biography})
 
-	fmt.Println("Biography Books")
+	fmt.Println("Biography Books:")
 	for _, r := range result {
 		fmt.Println(*r)
 	}
 
-	fmt.Println("All books")
+	fmt.Println("All books:")
 	for _, books := range bookStore.Books {
 		fmt.Println(books)
 	}

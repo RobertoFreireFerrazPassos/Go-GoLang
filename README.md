@@ -4,6 +4,8 @@
 
 * Unit Tests
 
-* SOLID
+* SOLID and OOP
+
+-> Composition Instead of Inheritance
 
 * Design Patterns
