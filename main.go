@@ -4,14 +4,12 @@ package main
 
 import (
 	"fmt"
-	"mainmodule/application"
+	"mainmodule/infrastructure"
 	"mainmodule/models"
-	"mainmodule/repository"
 )
 
 func main() {
-	bookStoreRepository := &repository.BookStoreRepository{}
-	bookStoreApp := application.BookStoreApp{BookStoreRepository: bookStoreRepository}
+	bookStoreApp := infrastructure.InitializeBookStoreApp()
 	bookStore := bookStoreApp.Get()
 
 	fmt.Println("Total of books: ", bookStore.AmountOfBooks())
