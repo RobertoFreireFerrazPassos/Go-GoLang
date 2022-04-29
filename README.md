@@ -6,6 +6,10 @@
 
 * SOLID and OOP
 
--> Composition Instead of Inheritance
+    -> Composition Instead of Inheritance
+
+    -> Dependency Injection
+
+* Goroutines and Channels
 
 * Design Patterns

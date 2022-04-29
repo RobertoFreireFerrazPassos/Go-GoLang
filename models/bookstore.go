@@ -1,4 +1,4 @@
-package books
+package models
 
 type Category int
 

@@ -4,23 +4,19 @@ package main
 
 import (
 	"fmt"
-	"mainmodule/books"
+	"mainmodule/application"
+	"mainmodule/models"
+	"mainmodule/repository"
 )
 
 func main() {
-	bookStore := books.BookStore{}
-	book1 := books.Book{Product: books.Product{Name: "Book 1 - Author 1", Category: books.Adventure}, Pages: 134}
-	book2 := books.Book{Product: books.Product{Name: "Book 2 - Author 2", Category: books.Biography}, Pages: 353}
-	book3 := books.Book{Product: books.Product{Name: "Book 3 - Author 3", Category: books.Fiction}, Pages: 189}
-	book4 := books.Book{Product: books.Product{Name: "Book 3 - Author 3", Category: books.Biography}, Pages: 230}
+	bookStoreRepository := &repository.BookStoreRepository{}
+	bookStoreApp := application.BookStoreApp{BookStoreRepository: bookStoreRepository}
+	bookStore := bookStoreApp.Get()
 
-	bookStore.AddBook(book1)
-	bookStore.AddBook(book2)
-	bookStore.AddBook(book3)
-	bookStore.AddBook(book4)
 	fmt.Println("Total of books: ", bookStore.AmountOfBooks())
 
-	result := bookStore.Filter(books.CategorySpecification{Category: books.Biography})
+	result := bookStore.Filter(models.CategorySpecification{Category: models.Biography})
 
 	fmt.Println("Biography Books:")
 	for _, r := range result {
