@@ -15,11 +15,10 @@ func main() {
 	bookStore := bookStoreApp.Get()
 
 	fmt.Println("Total of books: ", bookStore.AmountOfBooks())
-
-	result := bookStore.Filter(models.CategorySpecification{Category: models.Biography})
+	biographyBooks := bookStoreApp.GetBooksByCategory(models.Biography)
 
 	fmt.Println("Biography Books:")
-	for _, r := range result {
+	for _, r := range biographyBooks {
 		fmt.Println(*r)
 	}
 
