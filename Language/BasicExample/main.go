@@ -1,5 +1,7 @@
 package main
 
+// go mod init basicExample
+
 // go build main.go
 // go run main.go
 
@@ -14,6 +16,13 @@ func main() {
 }
 
 // base go types: string, integer, float, array, map
+
+func IntMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
 
 func sliceExample() {
 	// array that can grow and shrink

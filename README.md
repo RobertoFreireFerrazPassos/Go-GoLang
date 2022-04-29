@@ -1,5 +1,9 @@
 # Go-GoLang-Design-Patterns
 
-All the basics about the Go language
+* Go language
 
-Design Patterns in Go
+* Unit Tests
+
+* SOLID
+
+* Design Patterns
