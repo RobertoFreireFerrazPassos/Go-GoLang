@@ -10,8 +10,8 @@ const (
 )
 
 type Book struct {
-	Title    string
-	Category Category
+	Product Product
+	Pages   int
 }
 
 type BookStore struct {
@@ -28,4 +28,14 @@ func (bs *BookStore) RemoveBook(book Book) {
 
 func (bs *BookStore) AmountOfBooks() int {
 	return len(bs.Books)
+}
+
+func (bs *BookStore) Filter(spec Specification) []*Book {
+	result := make([]*Book, 0)
+	for i, b := range bs.Books {
+		if spec.IsSatisfied(&b.Product) {
+			result = append(result, &bs.Books[i])
+		}
+	}
+	return result
 }
