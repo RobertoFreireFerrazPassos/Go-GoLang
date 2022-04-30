@@ -22,10 +22,6 @@ func (bs *BookStore) AddBook(book Book) {
 	bs.Books = append(bs.Books, book)
 }
 
-func (bs *BookStore) RemoveBook(book Book) {
-	bs.Books = append(bs.Books, book)
-}
-
 func (bs *BookStore) AmountOfBooks() int {
 	return len(bs.Books)
 }
